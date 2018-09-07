@@ -1,5 +1,7 @@
 #include <cstdio>
-#include "multiplication.h"
+#include "multiplication.cc"
+#include <iostream>
+using namespace std;
 int main(int argc, char** argv)
 {
 	int first;
@@ -13,5 +15,6 @@ int main(int argc, char** argv)
 	cout <<"Enter the second number: ";
 	cin >> second;
 	
-	printf("%d\n", multiplication(first, second));
+	
+	printf("The product is: %d\n", multiplication(first, second));
 }

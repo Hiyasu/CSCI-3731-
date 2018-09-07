@@ -1,6 +1,6 @@
-#include "multiplication.h"
+#ifndef MULTIPLICATION_H
+#define MULTIPLICATION_H
 
-int multiplication (int x, int y)
-{
-	return x*y;
-}
+int multiplication (int x, int y);
+
+#endif

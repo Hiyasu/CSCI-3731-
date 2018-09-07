@@ -1,0 +1,29 @@
+Homework 2 Answers to short questions
+by Brandon Murakami
+CSCI 3731
+
+1. 'int' is just a normal integer variable assignment for example you can make 'n'
+an int by typing int n. 'const int' in C++ means that the assigned value for this
+int cannot be changed. This is similar to 'final' in Java. 'const' allows the compiler to
+catch errors in your code. 
+
+2. A function declaration allows you to define a function anywhere you want. A declaration
+only has the arguments and the return types. A function definition actually says what the 
+function wants to do, for example multiply two numbers together or some type of sorting 
+algorithm. A function definition can go in a separate file from the main file.
+
+3. You would use an unsigned integer in places where a negative number would be invalid. 
+An example would be a for loop or an array index.
+
+4. The problem with this C++ code is that the int variable 'sum' is not initialized to 
+anything. How I would fix this is to just initialize 'sum' to 0, like this: int sum=0;.
+
+5. The problem with this code is that in the if statement, there is only one '=' 
+sign which would make the code not compile. I would fix this by typing == so:
+if (0 == n).
+
+6. To find out how much bytes are used to store a particular datatype in C++, you can just
+use the sizeof(datatype) operator. On my system, a char is worth 1 byte, a short is worth
+2 bytes, an int is worth 4, and a long is worth 4 bytes. I am running on a Windows operating
+system.
+
