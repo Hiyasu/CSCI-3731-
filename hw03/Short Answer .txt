@@ -1,0 +1,27 @@
+Homework 3 Short Question Answers
+
+1. The integer variable 'min' is not initialized so I would just initialize
+min to 0: int min=0;. Also the value of min goes out of scope when the loop
+is closed with the ending bracket. The fix to this would just be putting the 
+printf statement inside the brackets.
+
+2. In this code the function header has int* when you need to declare the 
+pointers within the parameters: int pointerToMax(int* a, int* b). 
+
+3. What is wrong with this one is that the pointer ptr points at null, there is
+no other value variable for ptr to point at, and in the printf statement the &ptr
+puts the pointer back to null. I would fix this by just typing ptr in the printf 
+statement: printf("You entered %d", ptr);.
+
+4.  a. int* a; declares a pointer to and int called 'a'.
+	b. const int b; This declares a constant int called 'b'.
+	c. const int* c; This declares a pointer to a constant int called 'c'.
+	d. int* const d; Declares a constant pointer to an int named 'd'.
+	e. const int* const e; This declares a constant pointer to a constant integer. 
+	
+5. The '&' operator returns the pointer to a variable. The '*' operator does the opposite
+of the '&' operator as it returns the contents of the memory location it points at.
+
+6. const int* a declares a pointer to a constant integer 'a'. You can change the pointer
+but not the integer variable. int* const b declares a constant pointer to an integer 'b'.
+You can change the integer variable but not the pointer.
