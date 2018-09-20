@@ -1,0 +1,33 @@
+Answers to Short Questions: Homework 4
+
+1. The int* tmp variable is a point that has been dereferenced while trying to store the
+value that the pointer 'a' is pointing to. If you want to store the value that 'a' is 
+pointing at you have to declare it like: int tmp = *a;.
+
+2. This code is not safe and leaves security holes. This code needs a int size
+variable and increment it in the for loop. 
+int size=0;
+for(int=0; i<size-1 && string[i] != '\0'; ++i).
+
+3. Something like this: function(a+2,3);.
+
+4. The array is only created and used inside the function and will not be available
+when it goes out of scope. If you want to use a function to return an array
+you have to do something like:
+	double* allocateArray(int length){
+		return new int[length];
+	}
+
+5. The problem with this is that the string is not truncated with '\0' at the end. So 
+it will need one more spot in the array in this case you will have to truncate the string
+at the end manually:
+
+	char string[6];
+	string[0] = 'h';
+	string[1] = 'e';
+	string[2] = 'l';
+	string[3] = 'l';
+	string[4] = 'o';
+	string[5] = '\0';
+	
+	printf("%s\n", string);
