@@ -1,0 +1,46 @@
+Short Answers Homework 5
+
+1. C/C++ does not support two-dimensional arrays very well. When you try to pass a 2D array into a function
+you have to specify the size of the two dimensions of the array when it is compiled. This limits the sizes 
+of the images that your program can handle. 
+
+2. There are two ways to get around this problem that C++ has with 2D arrays. One way is to store the 2D array 
+into a one dimensional "flat" array. The rows of the 2D array are laid out end to end where you can access the 
+elements of the array through the offset. You can use the height and width of the rows and columns to specify 
+the dimensions of the 2D array. Using the variables i and j, you can skip over parts of the array to get to
+other 'rows' of the 2D array within the flat array.
+	//Create a flat array on heap memory
+	int* flatArray = new int[width*height];
+	
+	//Getting to certain elements in the flat array
+	int element = flatArray[j*width+i];
+
+	The second way to get around the problems in C++ is the "Numerical Recipes Trick". This method uses two 
+arrays, a flat array and an array of pointers. In the array of pointers, each pointer points to the start of
+of a row in the flattened array. The advantage to doing it this way is that you do not have to multiply each
+time you want to skip over each row like in the previous method. Since this method already has a pointer at 
+the start of each row you can access those instead. This saves computational time and keeps the code a bit
+cleaner.
+
+	//Create the array of pointers
+	int** array = new int*[height];
+	
+	//Flat array
+	*array = new int[width*height];
+	
+	//Set pointers to the start of each row in the flat array
+	for(int i=1; i<height; ++i){
+		array[i]=array[i-1]+width;
+	}
+3. My laptop is little endian. 
+My code: 
+#include <cstdio>
+int main(int argc, char** argv)
+{
+	int n=123456;
+	unsigned char* bytes=(unsigned char*)(&n);
+	printf("%d %d %d %d\n", bytes[0], bytes[1], bytes[2], bytes[3]);
+}
+
+Output: ./testing
+64 226 1 0
