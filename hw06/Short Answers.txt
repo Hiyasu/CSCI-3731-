@@ -1,0 +1,12 @@
+Short Answers for Homework 6
+
+1. Libraries are good for storing code that was written by others. Instead of writing a bunch of code
+out yourself, you can just access a library for it. Chances are someone has already written code for
+something you want to do. Instead of using hundreds of diffent .o files, you can link to a library which
+is a collection of object files.
+
+2. The two types of libraries are static and shared object libraries. The "Static" libraries works like
+the object files they are made of. Linking to a static library makes it object files part of the executable
+file just like the individual object files do. "Shared object" libraries, also known as "Dynamic Linked" 
+Libraries, behave differently from static libraries. The main difference is that they stay separate from
+the executable file. The code they contain is loaded upon runtime of the executable.
