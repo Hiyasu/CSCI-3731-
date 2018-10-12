@@ -1,47 +1,50 @@
 #include <cstdio>
-#include "jpeglib.h"
-#include <stdio.h>
+#include <jpeglib.h>
+#include <cstdlib>
 #include <setjmp.h>
-//#include "writejpeg.h"
+#include "writejpeg.h"
 
 //JSAMPLE is a data definition. Makes char file compatible. 
-JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
-int image_height;	/* Number of rows in image */
-int image_width;		/* Number of columns in image */
+//JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
+//const char* file2
 //FILE* fileName
-void writejpeg(const char* file2, unsigned char* array, int width, int height, int quality){
-
+void writejpeg(FILE* file2, unsigned char* array, int width, int height, int quality){
+	
+	unsigned char * image_buffer=array;
+	int image_height;	/* Number of rows in image */
+    int image_width;		/* Number of columns in image */
+	
 	//quality is a number between 0-100 that you have to choose.
 	struct jpeg_compress_struct cinfo;
 	
 	struct jpeg_error_mgr jerr;
 	
-	FILE * outfile;
-	JSAMPROW row_pointer[1];
+	//FILE * outfile;
+	unsigned char* row_pointer[1];
 	int row_stride;
 	
 	cinfo.err=jpeg_std_error(&jerr);
 	
 	jpeg_create_compress(&cinfo);
 	
-	if ((outfile=fopen(file2, "wb"))==NULL){
+	if (file2==NULL){
 		fprintf(stderr, "Cannot open %s\n", file2);
 		exit(1);
 	}
-	jpeg_stdio_dest(&cinfo, outfile);
+	jpeg_stdio_dest(&cinfo, file2);
 	
-	cinfo.image_width=image_width;
-	cinfo.image_height=image_height;
+	cinfo.image_width=width;
+	cinfo.image_height=height;
 	cinfo.input_components=3;
 	cinfo.in_color_space=JCS_RGB;
 	
 	jpeg_set_defaults(&cinfo);
 	
-	jpeg_set_quality(&cinfo, quality, TRUE);
+	jpeg_set_quality(&cinfo, 100, TRUE);
 	
 	jpeg_start_compress(&cinfo, TRUE);
 	
-	row_stride=image_width*3;
+	row_stride=width*3;
 	
 	while (cinfo.next_scanline < cinfo.image_height){
 		
@@ -52,7 +55,7 @@ void writejpeg(const char* file2, unsigned char* array, int width, int height, i
 	jpeg_finish_compress(&cinfo);
 	
 	//Close file and free up memory
-	fclose(outfile);
+	//fclose(outfile);
 	jpeg_destroy_compress(&cinfo);
 	
 

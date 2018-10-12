@@ -1,14 +1,12 @@
-#include "jpeglib.h"
-#include <stdio.h>
-#include <setjmp.h>
 #include <cstdio>
-#include "read.cc"
-#include "writejpeg.cc"
+#include <setjmp.h>
+#include "read.h"
+#include "writejpeg.h"
 
 int main(int argc, char** argv){
 
-	char file[50]="test.ppm";
-	char file2[50]="test2.ppm";
+	FILE* file=fopen("test.ppm", "rb");
+	FILE* file2=fopen("test2.jpeg","wb");
 	char header[3];
 	int width=0;
 	int height=0;
@@ -22,4 +20,7 @@ int main(int argc, char** argv){
 
 	delete [] data;
 	data=NULL;
+	
+	fclose(file2);
+	fclose(file);
 }

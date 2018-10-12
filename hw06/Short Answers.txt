@@ -2,7 +2,7 @@ Short Answers for Homework 6
 
 1. Libraries are good for storing code that was written by others. Instead of writing a bunch of code
 out yourself, you can just access a library for it. Chances are someone has already written code for
-something you want to do. Instead of using hundreds of diffent .o files, you can link to a library which
+something you want to do. Instead of using hundreds of different .o files, you can link to a library which
 is a collection of object files.
 
 2. The two types of libraries are static and shared object libraries. The "Static" libraries works like
