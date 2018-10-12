@@ -11,6 +11,7 @@ unsigned char* read(const char* file, char* header, int *width, int *height, int
 	printf("Number of pixels: %d\n", *numPixels);
 	
 	int size=(*height)*3*(*width); //width*height 
+	//int** array = new int*[*height];
 	unsigned char* pixelData=new unsigned char[size];
 	int check=fread(pixelData, sizeof(char), size, fp);
 	printf("Size of the image: %d\nNumber of pixels read: %d\n", size, check);
