@@ -1,0 +1,50 @@
+Short Answers to Homework 7
+
+1.At the end of the class, there is no semi-colon which is a big issue. To fix
+this just simply put a semi-colon after the last closing bracket
+
+	}; // end of Projectile class
+
+2. The first thing that is wrong with this constructor is that we cannot tell 
+what class this method belongs too. This is because there is no "::" at the 
+beginning of the constructor. This can be fixed like this:
+
+Projectile :: Projectile
+
+	The second thing that is wrong is that the data types of the arguments for
+the constructor are not the same as the Projectile class. In the Projectile 
+class it declares doubles for speed and velocity. In the constructor is is 
+taking integers as arguments. To fix this just change the arguments to doubles:
+
+Projectile :: Projectile(double speed, double velocity){
+
+	The third thing that is wrong with this constructor is that the pointers
+are not dereferenced. 'this' is a pointer so where is has this.x and this.y,
+these pointers are not dereferenced. In order to dereference these pointers
+you either use (*this).x or this->x:
+
+Projectile :: Projectile(double speed, double velocity){
+
+	this->x=x;
+	this->y=y;
+} //end of constructor
+
+3.  a. int* method(int* arg); This method returns a pointer to an integer and
+	takes a pointer to an integer as the argument.
+	
+	b. const int* method(int* arg); This method returns a pointer to a constant integer and takes a pointer to an int as the argument. 
+	
+	c. const int* const method(int* arg); This method returns a constant pointer to a constant integer and takes a pointer to an int as its argument. 
+	
+	d. const int* const method(const int* arg); This method returns a constant pointer to a constant integer and takes a pointer to a constant int as its argument.
+	
+	e. const int* const method(const int* arg) const; This method is constant and it returns a constant pointer to a constant integer. It also takes a pointer to a constant integer as its argument. 
+	
+4. C++ strings are better than C strings since they are safer and more convenient. C++ strings have methods that go along with them like length() which allow you to play with strings in a number of ways. C++ strings also make use of operator overloading which can be useful in a lot of situations.
+
+C strings can be better than C++ strings in some situations. One way is that
+C strings are lighter and more efficient than C++ strings so if you had to write a very high performance code, C strings would be better to use. Another reason is that C strings were originally part of the language while C++ strings were added later. Because of this some C++ functions take C strings as arguments. Also there are libraries that use C strings as well.
+
+5. A pointer in C++ can directly access memory locations of values. Pointers have to be dereferenced before you use them. You can also change what a pointer points to unless you make it constant. References are like easier to use pointers. References are automatically dereferenced but you cannot change what they point to once they are initialized. References can also never be NULL.
+
+6. A destructor is used to delete the heap data and is also called when a class is deleted, when an object on the stack goes out of scope, or when an object on the heap gets deleted. It is also used to hold the deletes for any new that is made.
