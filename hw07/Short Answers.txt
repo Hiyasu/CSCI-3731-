@@ -45,6 +45,6 @@ Projectile :: Projectile(double speed, double velocity){
 C strings can be better than C++ strings in some situations. One way is that
 C strings are lighter and more efficient than C++ strings so if you had to write a very high performance code, C strings would be better to use. Another reason is that C strings were originally part of the language while C++ strings were added later. Because of this some C++ functions take C strings as arguments. Also there are libraries that use C strings as well.
 
-5. A pointer in C++ can directly access memory locations of values. Pointers have to be dereferenced before you use them. You can also change what a pointer points to unless you make it constant. References are like easier to use pointers. References are automatically dereferenced but you cannot change what they point to once they are initialized. References can also never be NULL.
+5. A pointer in C++ can directly access memory locations of values. Pointers have to be dereferenced before you use them. You can also change what a pointer points to unless you make it constant. References are like easier to use pointers. References are automatically dereferenced but you cannot change what they point to once they are initialized, that is the difference between pointers and references.
 
 6. A destructor is used to delete the heap data and is also called when a class is deleted, when an object on the stack goes out of scope, or when an object on the heap gets deleted. It is also used to hold the deletes for any new that is made.
