@@ -1,0 +1,42 @@
+Short Answers for Homework 8
+
+1. The 'friend' keyword allows access to a class's private elements. Usually used between functions and classes. In a sense functions and classes that are friends, 
+the function has access to the class's private variables.
+
+2. You should never use 'using namespace std' in the header file or in general. If you do this it will import the namespace in any C++ file that uses that header 
+which compromises the usefulness of namespaces. Which means you cannot use that namespace to avoid name collisions. 
+
+3. One way to return an object from a method is to return a reference to a 
+class member. This method returns a reference to data that exists beyond the 
+method in the class. 
+
+A second way is to return a copy. This involves returning an actual object and
+copying it. By doing this, you return a new object that is separate from the data in the class. This method is not advised since it is very inefficient.
+
+A third method is to return an object created on the heap. This method is good
+to use when you want to create new objects. By creating the objects on the heap
+and returning a pointer to that object, we ensure that the object outlives the
+method. There are 2 real downsides to doing it this way, first is that the user has to deal with heap data so they have to delete data when they are done with it. 
+The second problem is that the method allocates fresh memory every time you call it.
+
+The fourth and final method is to use an argument. This is the most efficient and simplest method. It involves just passing a non-constant reference to an existing 
+object which the method then modifies. This leaves all the memory management up to the user.
+
+4. The 'mutable' keyword in C++ marks class members (only variables) that can
+be modified inside of a constant method. This should be done a little as possible. Mutable should be used with the cache pattern.
+
+5. There are 3 ways that a class can contain an object. The first method is as an actual object. This involves storing actual objects like storing points as actual 
+objects in a Line class. The objects are stored as stack data so C++ automatically gets destroyed when Line is destroyed. This simplifies memory management.
+	The second way is to make the objects into references. By doing this, the
+class does not own the objects for example, if a Line class has references to
+two points, it allows two different Lines to share these two points if it is needed. The only downside is that you have to initialize the references when you 
+declare them and once you do this you cannot change what they refer to. They also cannot be NULL.
+	The third way is to store the pointers. This allows the class to keep 
+track of whether or not it owns the objects in question. This requires 
+boolean flags for keeping track of ownership. You then initialize the objects to null and the boolean flag(s) to true in the no-argument constructor. In the 
+destructor you only delete the object if you own them, checking this with an if statement: if(own) delete object;. We then need to make a borrowing set method and 
+an owning set method. The borrow method is if we own a particular object and if we do we delete it, store it, then set the ownership flag to false. The owner 
+method basically does the opposite of this except if we do not own the object we have to create a new object that we own, discard anything it was pointing at, and 
+then set it.  
+
+6. A singleton is a class that only has one instance. 
