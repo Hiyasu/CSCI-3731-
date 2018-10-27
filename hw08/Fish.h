@@ -1,6 +1,6 @@
 #ifndef FISH_H
 #define FISH_H
-
+#include <cstdlib>
 class Fish{
 
 private:
@@ -16,9 +16,17 @@ public:
 	
 	double getX() const;
 	double getY() const;
+	double getSpeed() const;
+	double getDir() const;
+	double getTurn() const;
 	
 	void set(double x);
 	void set(double y);
+	void set(double speed);
+	void set(double direction);
+	void set(double turn_rate);
+	
+	void swim();
 
 
 }; 

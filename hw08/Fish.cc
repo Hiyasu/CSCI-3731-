@@ -51,6 +51,18 @@ void Fish::set(double y){
 	this->y = y;
 }
 
+void Fish::set(double speed){
+	this->speed=speed;
+}
+
+void Fish::set(double direction){
+	this->direction=direction;
+}
+
+void Fish::set(double turn_rate){
+	this->turn_rate=turn_rate;
+}
+
 void Fish::swim(){
 	
 	int choice = rand()%3;
