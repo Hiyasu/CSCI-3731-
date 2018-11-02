@@ -7,7 +7,6 @@
 //Constructor
 Angle2::Angle2(double x){
 	this->x=x;
-	have_angle=false;
 }
 //Destructor
 Angle2::~Angle2() {
@@ -27,24 +26,26 @@ double Angle2::getX() const {
 void Angle2::set(double x) {
     
     this->x = x;
+	have_Sin=false;
+	have_Cos=false;
 }
 
 double Angle2::getSin() const{
 	
-	if(!have_angle){
-		x=sin(x*M_PI/180.0);
-		have_angle=true;
+	if(!have_sin){
+		this->Sin=sin(this->x*M_PI/180.0);
+		have_sin=true;
 	}
-	return x;
+	return this->Sin;
 }
 
 double Angle2::getCos() const{
 	
-	if(!have_angle){
-		x=cos(x*M_PI/180.0);
-		have_angle=true;
+	if(!have_cos){
+		this->Cos=cos(this->x*M_PI/180.0);
+		have_cos=true;
 	}
-	return x;
+	return this->Cos;
 }
 
 

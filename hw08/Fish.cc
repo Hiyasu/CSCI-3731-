@@ -1,12 +1,16 @@
 #include "Fish.h"
+#include "Population.h"
 #include <cstdio>
 #include <iostream>
 #include <cstdlib>
 
-//Constructor
-Fish::Fish(double x, double y) {
-	this->x=x;
-	this->y=y;
+//Constructor w/o arguments
+Fish::Fish() {
+	this->x=0.0;
+	this->y=0.0;
+	speed=0.0;
+	direction=0.0;
+	turn_rate=0.0;
 }
 
 //Destructor
@@ -40,26 +44,26 @@ double Fish::getTurn() const{
 	return turn_rate;
 }
 
-//Setter
-void Fish::set(double x) {
+//Setters
+void Fish::setX(double x) {
     
     this->x = x;
 }
 
-void Fish::set(double y){
+void Fish::setY(double y){
 
 	this->y = y;
 }
 
-void Fish::set(double speed){
+void Fish::setSpd(double speed){
 	this->speed=speed;
 }
 
-void Fish::set(double direction){
+void Fish::setDir(double direction){
 	this->direction=direction;
 }
 
-void Fish::set(double turn_rate){
+void Fish::setTurn(double turn_rate){
 	this->turn_rate=turn_rate;
 }
 
@@ -67,10 +71,10 @@ void Fish::swim(){
 	
 	int choice = rand()%3;
 	
-	if(choice==0) direction -= turn_rate;
-	else if(choice==2) direction += turn_rate;
+	if(choice==0) this->direction -= turn_rate;
+	else if(choice==2) this->direction += turn_rate;
 	
-	x += speed * direction.getCos();
-	y += speed * direction.getSin();
+	this->x += speed * direction.getCos();
+	this->y += speed * direction.getSin();
 
 }

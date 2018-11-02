@@ -1,27 +1,40 @@
 #include "Population.h"
-
-//Work in progress...
+#include "Fish.h"
+class Fish;
+//Updated
 Population::Population(){
-
+	this->counter=0;
+	this->max_fishes=1000;
+	fishes=new Fish*[max_fishes];
 }
 
 Population::~Population(){
 
 }
 
-void Population::add(){
-
+void Population::add(Fish* fishy){
+	fishes[counter]=fishy;
+	this->counter++;
 }
 
-void Population::remove(){
-
+void Population::remove(const Fish* fishy){
+	for(int i=0; i<counter; i++)
+	{
+		if(fishes[i]==fishes[counter])
+		{
+			counter--;
+			fishes[i]=fishes[counter]; //takes the fish at counter and puts it in the place where u want to remove the fish 
+			fishes[counter]=NULL; //Set the empty space to NULL
+		}
+	}
+	
 }
 
-int Population::size(){
-
+const int Population::size() const{
+	return this->counter;
 }
 
-int* Population::get(){
-	return *this;
+Fish* Population::get(const int index) const{
+	return fishes[index];
 }
 

@@ -4,8 +4,11 @@
 class Angle2{
 
 private:
-	mutable double x;
-	mutable bool have_angle;
+	double x;
+	mutable double Sin;
+	mutable double Cos;
+	mutable bool have_Sin;
+	mutable bool have_Cos;
 public: 
 	Angle2(double x);
     virtual ~Angle2();
