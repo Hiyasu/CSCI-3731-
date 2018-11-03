@@ -1,0 +1,9 @@
+Note:
+Some of the classes and the main are incomplete. Although there are significant 
+changes and updates on the program from last week.
+
+I did not have enough time to look at everything and finish all the classes and
+the headers before the due date. I did as much as I could and I will turn in 
+what I have.
+
+-Brandon Murakami

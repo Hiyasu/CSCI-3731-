@@ -1,0 +1,38 @@
+Short Answers for Homework 9
+
+1. The term "upcasting" is the process of referring to a object as though  it were its superclass. The opposite
+which is "downcasting" refers to the process of converting an object back to a subclass.
+
+2. You would mark a method virtual if you want a subclass to override the
+method you are marking. If you think that a subclass will override that method,
+you should mark it virtual. Marking a method virtual actually slows down your
+code so you shouldn't use it sparingly. If you're sure a subclass won't override
+a method then there is no reason to mark it virtual in order to save time.
+
+3. A dynamic cast is similar to a Java cast as it looks at the actual type of 
+the object being casted and checks if it is legal to cast it at all. Static 
+casting checks what they can when the program is compiled but doesn't look at 
+the actual type of the object at runtime. Dynamic casting is the safest way of
+casting in C++ but is slow and there are times when you shouldn't use it like
+if you are casting a pointer or a reference which won't work. A time when you
+would use static casting over dynamic casting is if you really need a bit more
+speed since static casting a faster and you are certain you are doing valid 
+casting.
+
+4. You might have to use const casting to get rid of a const. You may have to
+use this if you are calling some library where you cannot control the source 
+code. If the author forgot to mark a method argument as const and you have a 
+const object, you cannot use this method. Const casting can help you here. 
+
+5. If you pass the ojbect Banana b into the first method you'll have to 
+override it which leads into passing it into the second method since it has
+the same name. You'll have to overload all the methods if you want to use 
+the same name for both these methods. 
+
+6. In Java, every class except for Object has one and only one parent class 
+and you also have one universal base class which all the other classes 	
+inherit. Java also has interfaces which allow you to group classes together
+in a safe way. 
+	In C++ a class can have not parent or multiple parents. You can also 
+inheret from more than one superclass in C++ which each have their own data 
+and method implementations.
