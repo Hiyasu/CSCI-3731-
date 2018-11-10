@@ -1,0 +1,19 @@
+Short Answers for Homework 10
+
+1. Java has one universal base class that everything inherits. C++ does not have
+something like this and instead has templates. Templates allow you to make a 
+class once and specify the datatype later.
+
+2. A template only has a header and it does not have a .cc file. A template does not specify
+a datatype either. A template is also not a class but a spefication on how to 
+make a class.
+
+3. There are some drawbacks to templates and once of them is the use of the <>
+brackets. You have to use these brackets when you use template for examples
+List<Drinks> drinks;. But when you do this it creates a new class for each
+different type you use. There is no casting and <> handles primitives directly.
+This leads to bigger compiler code which increases compiling time.
+
+4. An iterator is a type of class that represents the current element that is 
+selected in a collection and allows you to go from one element to the next. In
+C++ an iterator basically mimics a pointer to iterate over and array.
