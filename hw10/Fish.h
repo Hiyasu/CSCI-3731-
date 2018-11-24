@@ -9,8 +9,8 @@ private:
 	double x;
 	double y;
 	double speed;
-	Angle direction;
-	Angle turn_rate;
+	Angle<double> direction;
+	Angle<double> turn_rate;
 	
 public: 
 	Fish();

@@ -1,6 +1,7 @@
 #ifndef ANGLE2_H
 #define ANGLE2_H
 
+//Used for hw09
 class Angle2{
 
 private:

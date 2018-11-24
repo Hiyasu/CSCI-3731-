@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include "Angle.h"
 
-//Header for Fish Superclass for w09
+//Header for Fish Superclass for hw09
 class Population; //Forward declaration of Population class
 class Fish{
 

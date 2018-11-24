@@ -4,6 +4,7 @@ I have regraded the Homeworks listed below:
 
 hw04
 hw06
+hw08: I couldn't get it to compile but it is significantly better than the previous version.
 
 Note: I already had hw04 working which allowed me to do homeworks 05 and 06. I fixed all the errors in hw06 
 so it now compiles and works. 

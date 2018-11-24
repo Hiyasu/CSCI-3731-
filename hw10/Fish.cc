@@ -1,16 +1,11 @@
 #include "Fish.h"
-#include "Population.h"
-#include <cstdio>
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 #include "Angle.h"
-//Fish class for hw10
-//Constructor w/o arguments
-Fish::Fish() {
-	this->x=0.0;
-	this->y=0.0;
-	speed=0.0;
-	
+#include <vector>
+//Fish class for hw10 
+Fish::Fish(double x, double y, double spd, Angle<double> dir, Angle<double> turnrate){
+
 }
 
 //Destructor
