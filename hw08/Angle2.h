@@ -1,6 +1,6 @@
 #ifndef ANGLE2_H
 #define ANGLE2_H
-
+//hw08
 class Angle2{
 
 private:
@@ -10,7 +10,7 @@ private:
 	mutable bool have_Sin;
 	mutable bool have_Cos;
 public: 
-	Angle2(double x);
+	Angle2();
     virtual ~Angle2();
 	
 	double getX() const;

@@ -1,4 +1,4 @@
-all: main 
+all: main1
 
 Log.o: Log.cc Log.h
 	g++ -c -Werror Log.cc
@@ -15,5 +15,5 @@ Population.o: Population.cc Population.h
 main.o: main.cc Log.h
 	g++ -c -Werror main.cc
 	
-main: main.o Log.o
+main1: main.o Log.o Angle2.o Fish.o Population.o
 	g++ -o main main.o Log.o Angle2.o Fish.o Population.o

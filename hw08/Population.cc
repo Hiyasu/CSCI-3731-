@@ -1,6 +1,7 @@
 #include "Population.h"
 #include "Fish.h"
 class Fish;
+//For hw08
 //Updated
 Population::Population(){
 	this->counter=0;
